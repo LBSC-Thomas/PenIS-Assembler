@@ -1,49 +1,29 @@
+#!/usr/bin/env python
 #This is the PenIS assembler, made by LBSC (Thomas)
 
 import sys
 
 #This part are functions that check somethings.
 def is_a_function(symbol):
-    if symbol == "NOP" or "ADD" or "SUB" or "NAND" or "JMP" or "LD":
-        return True
-    else:
-        return False
+    return symbol in ["NOP", "ADD", "SUB", "NAND", "JMP", "LD"]
 
 def is_a_destination(symbol):
-    if symbol == "R0" or "R1" or "R2" or "R3":
-        return True
-    else:
-        return False
+    return symbol in ["R0", "R1", "R2", "R3"]
 
 def is_a_source(symbol):
-    if symbol == "R0," or "R1," or "R2," or "R3,":
-        return True
-    else:
-        return False
+    return symbol in ["R0,", "R1,", "R2,", "R3,"]
 
 def is_a_target(symbol):
-    if symbol == "[0]" or "[1]" or "[2]" or "[3]":
-        return True
-    else:
-        return False
+    return symbol in ["[0]", "[1]", "[2]", "[3]"]
 
 def is_a_value(symbol):
-    if symbol == "$0" or "$1" or "$2" or "$3" or "$4" or "$5" or "$6" or "$7" or  "$8" or "$9" or "$10" or "$11" or "$12" or "$13" or "$14" or "$15":
-        return True
-    else:
-        return False
+    return symbol in ["$0", "$1", "$2", "$3", "$4", "$5", "$6", "$7", "$8", "$9", "$10", "$11", "$12", "$13", "$14", "$15"]
 
 def is_a_condition(symbol):
-    if symbol == "EQ" or "NEQ" or "NEG" or "JMP":
-        return True
-    else:
-        return False
+    return symbol in ["EQ", "NEQ", "NEG", "JMP"]
 
 def is_a_comment(symbol):
-    if "//" in symbol:
-        return True
-    else:
-        return False
+    return "//" in symbol
 
 #This part keeps track of the lines and index for the instruction list. It also indicates which type of instruction it is*.
 programCounter = 0
