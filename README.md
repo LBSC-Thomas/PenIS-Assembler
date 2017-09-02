@@ -1,2 +1,1 @@
-# PenIS-Assembler
-An assembler I made for fun, it's based on the PenIS instruction set.
+This is the PenIS assembler. It's an assembler I made for fun. This assembler won't produce programs that you can run in your computer, instead it's a so called cross assembler. It runs in one computer and produces code for another computer. As long as I know, there's no PenIS machine, it's an turing complete IS that can be actually done in practice. You'll need Python to run this.
